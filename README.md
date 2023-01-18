@@ -80,11 +80,11 @@ You will also see any lint errors in the console.
 
 ## Motivation
 
-The used tech set of coice by recommendation. RTK Query as management for API calls is powerful tool with caching management build in. Its part of redux toolkit so no extra library needed. Did not used axios HTTP client for that matter, asobsolete over RTK Query. It might have less support for older browsers, so polifills must be used instead. Used craco to extend react-scripts without ejecting the application. Extended the react-scripts in order to user relative paths for typescript. Setup Husky git hooks for inting on commit and deploy.
+The used tech set of coice by recommendation. RTK Query as management for API calls is powerful tool with caching management build in. Its part of redux toolkit so no extra library needed. Did not used axios HTTP client for that matter, asobsolete over RTK Query. It might have less support for older browsers, so a polyfill must be used instead. Used craco to extend react-scripts without ejecting the application. Extended the react-scripts in order to user relative paths for typescript. Setup Husky git hooks for inting on commit and deploy.
 
 ## Left TO DO 
 
-- Removing repetative inline styles. 
+- Removing repetative inline styles.
 - Generalizind and extendng interfaces for component props.
 - Test cases and test coverage
 
