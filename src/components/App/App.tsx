@@ -1,26 +1,19 @@
-import React from 'react';
-import logo from '@/assets/logo.svg';
-import './App.css';
+import { FC } from 'react';
+import AppRoutes from '@/routes';
+import BaseLayout from '../Layouts/BaseLayout';
+import { ConfigProvider } from 'antd';
+import customTheme from './theme';
 
-function App() {
+import 'antd/dist/reset.css';
+
+const App: FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ConfigProvider theme={customTheme}>
+      <BaseLayout>
+        <AppRoutes />
+      </BaseLayout>
+    </ConfigProvider>
   );
-}
+};
 
 export default App;

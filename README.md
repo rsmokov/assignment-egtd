@@ -1,12 +1,66 @@
-# Getting Started with Create React App
+# Assigment EGTD Demo App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About
 
-## Available Scripts
+This is a demo application with 2 main routes "Tasks" and "Users". "Users" route has subroutes "User List" and "User Posts".
 
-In the project directory, you can run:
+### Requirements
 
-### `yarn start`
+#### For User List
+- Use the public JSONPlaceholder API to fetch and display 10 users on the home page of the application
+- Display the users as a vertical list of collapsible sections
+- Expanded users should be editable
+- Add basic input validation - username, email, address.street, address.suite, and address.city are mandatory
+- Implement cancel/revert and submit buttons (should only be active when changes are made)
+- Add a button ’See posts’ that redirects to a new page
+
+##### For User Posts
+
+GET https://jsonplaceholder.typicode.com/posts?userId=X
+- Display the user details at the top of the page (information should be editable as on the home page)
+- Fetch and display a list of posts for the given user id
+- Posts should be editable and deletable through the JSONPlaceholder API - use a confirmation popup for
+the delete functionality
+
+##### For Tasks
+
+GET https://jsonplaceholder.typicode.com/todos
+- Create a separate /tasks route
+- Fetch and display a list of tasks - use HTML table with basic pagination of page size 10
+- Allow filtering by task status (completed or not completed), title and owner (user)
+- Implement functionality for changing the status of a task - changes should persist through searches
+
+## How to run
+
+###### In the project root directory, you should first run:
+
+```bash
+ `yarn`
+```
+
+###### Then start the application with for dev environment:
+
+```bash
+ `yarn start`
+```
+
+###### To build the application user the command:
+
+```bash
+ `yarn build`
+```
+
+###### To run tests:
+
+```bash
+ `yarn test`
+```
+
+###### Tests with coverage:
+
+```bash
+ `yarn test:coverage`
+```
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -14,33 +68,29 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech
 
-### `yarn build`
+- [React with Typescript] (https://create-react-app.dev/docs/adding-typescript/)
+- [State management] - Redux and redux-toolkit (https://redux-toolkit.js.org/introduction/getting-started)
+- [RTK Query] - Part of the Redux Toolkit. It is purpose-built to solve the use case of data fetching and caching, supplying a compact, but powerful toolset to define an API interface layer for your app. 
+- [UI Library] (https://ant.design/components/overview/) - Ant Design for React
+- [Router] (https://reactrouter.com/) - react-router
+- [Backend] (https://jsonplaceholder.typicode.com/guide/) - JSONPlaceholder API 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Motivation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The used tech set of coice by recommendation. RTK Query as management for API calls is powerful tool with caching management build in. Its part of redux toolkit so no extra library needed. Did not used axios HTTP client for that matter, asobsolete over RTK Query. It might have less support for older browsers, so polifills must be used instead. Used craco to extend react-scripts without ejecting the application. Extended the react-scripts in order to user relative paths for typescript. Setup Husky git hooks for inting on commit and deploy.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Left TO DO 
 
-### `yarn eject`
+- Removing repetative inline styles. 
+- Generalizind and extendng interfaces for component props.
+- Test cases and test coverage
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Authors
+Radoslav Smokov
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+[MIT](https://choosealicense.com/licenses/mit/)
