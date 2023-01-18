@@ -15,10 +15,10 @@ const BaseLayout: FC<BaseLayoutProps> = ({ children }: BaseLayoutProps) => {
   } = theme.useToken();
 
   return (
-    <Layout style={{ minHeight: '100vh' }}>
+    <Layout style={{ minHeight: '100vh', display: 'flex', alignItems: 'center' }}>
       <LayoutHeader />
-      <Content className="site-layout" style={{ padding: '0 50px 50px 50px', minHeight: '85vh' }}>
-        <div style={{ padding: 24, minHeight: '85vh', background: colorBgContainer }}>{children}</div>
+      <Content className="site-layout" style={{ padding: '0 50px 50px 50px', minHeight: '85vh', maxWidth: '1024px' }}>
+        <div style={{ padding: 24, minHeight: '85vh', minWidth: '45vw', background: colorBgContainer }}>{children}</div>
       </Content>
       <Footer />
     </Layout>

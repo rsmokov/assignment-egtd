@@ -5,7 +5,7 @@ import { ContentLoadingSpinner } from '@/components';
 import { useUpdateUserMutation } from '@/store/api';
 
 const layout = {
-  labelCol: { span: 8 },
+  labelCol: { span: 4 },
   wrapperCol: { span: 16 },
 };
 
@@ -41,7 +41,14 @@ export const UserForm: FC<UserFormProps> = ({ data, closeForm }: UserFormProps) 
     <>
       {isUpdating ? <ContentLoadingSpinner /> : null}
       {contextHolder}
-      <Form {...layout} initialValues={data} name="nest-messages" onFinish={onFinish} onChange={onChange}>
+      <Form
+        {...layout}
+        labelAlign="left"
+        initialValues={data}
+        name="nest-messages"
+        onFinish={onFinish}
+        onChange={onChange}
+      >
         <Form.Item name="id" noStyle>
           <Input type="hidden" />
         </Form.Item>
@@ -55,7 +62,7 @@ export const UserForm: FC<UserFormProps> = ({ data, closeForm }: UserFormProps) 
           <Input />
         </Form.Item>
         <Form.Item label="Address">
-          <Input.Group compact>
+          <Input.Group>
             <Form.Item name={['address', 'street']} label="Street" rules={[{ required: true }]}>
               <Input />
             </Form.Item>
@@ -68,7 +75,7 @@ export const UserForm: FC<UserFormProps> = ({ data, closeForm }: UserFormProps) 
             <Form.Item name={['address', 'zipcode']} label="Zipcode" rules={[{ min: 3 }]}>
               <Input />
             </Form.Item>
-            <Input.Group compact>
+            <Input.Group>
               <Form.Item name={['address', 'geo', 'lat']} label="Lattitude" rules={[{ min: 7 }]}>
                 <Input />
               </Form.Item>
